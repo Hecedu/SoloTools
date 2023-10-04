@@ -6,7 +6,7 @@ import TagManager from '@/components/tm/TagManager';
 import { Tag, terraformingMarsTags } from '@/models/Tag';
 
 
-export default function page() {
+export default function Page() {
   const [generation, setGeneration] = useState<number>(1);
   const [terraformingRating, setTerraformingRating] = useState<number>(14);
 
@@ -122,7 +122,7 @@ export default function page() {
         </div>
         <TagManager tags={tags} setTags={setTags} />
         <div className='flex items-center'>
-          <a className='flex-auto text-xs' href='/'>TM Solo Tracker</a>
+          <a className='flex-auto text-xs' href='/'>Solo Tools</a>
           <a className='flex-auto text-end text-xs' href='https://hectormagana.art/'>©️2023 B-Llage</a>
         </div>
       </div>
