@@ -63,7 +63,7 @@ export default function Page() {
   }
 
   return (
-    <div className='flex justify-center items-center min-h-screen h-max'>
+    <div className='flex justify-center items-center min-h-full h-max'>
       <div className='container md:border md:border-2 md:rounded p-1 h-max'>
         <div className='flex items-center mb-1'>
           <div className='flex-auto '>
