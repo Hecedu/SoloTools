@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TagDisplay from "./TagDisplay";
-import { Tag, terraformingMarsTags } from "@/models/Tag";
+import { Tag } from "@/models/Tag";
 import TagCounter from "./TagCounter";
 
 
 type TagManagerProps = {
-  tags : Tag[]
+  tags: Tag[]
   setTags: React.Dispatch<React.SetStateAction<Tag[]>>
 }
 
-export default function TagManager({tags, setTags} : TagManagerProps) {
-  
-  const [showModal, setShowModal] = React.useState(false);
+export default function TagManager({ tags, setTags }: TagManagerProps) {
+  const minDesktop = 768;
+  const [showModal, setShowModal] = useState(false);
 
   function addAmountToTag(tagName: string, amountChange: number) {
     var index = tags.findIndex((obj => obj.name == tagName));
@@ -22,10 +22,12 @@ export default function TagManager({tags, setTags} : TagManagerProps) {
   }
   return (
     <div>
-      <div className='flex items-center my-1 py-1 border border-2 rounded' onClick={() => { setShowModal(true) }}>
+      <div className="flex items-center my-1 border border-2 rounded cursor-pointer" onClick={() => { setShowModal(true) }}>
         {
+
           tags.map((tag, index) => (
-            <TagDisplay key={index} name={tag.name} emoji={tag.emoji} amount={tag.amount} />
+
+            <TagDisplay key={index} name={tag.name} image={tag.image} amount={tag.amount} />
           ))
         }
       </div>
@@ -34,23 +36,15 @@ export default function TagManager({tags, setTags} : TagManagerProps) {
         <>
           <div
             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-          >
-            <div className="relative m-6 mx-1 w-auto h-auto">
+            onClick={() => setShowModal(false)}>
+            <div className="relative m-6 w-max h-auto">
               {/*content*/}
-              <div className="border-2 rounded-lg shadow-lg relative flex flex-col w-full h-auto bg-black outline-none focus:outline-none">
+              <div className="border-2 rounded-lg shadow-lg relative flex flex-col w-full h-auto bg-stone-900 outline-none focus:outline-none" onClick={e => e.stopPropagation()}>
                 {/*header*/}
-                <div className="flex items-start justify-between p-2 border-b border-solid border-slate-200 rounded-t">
+                <div className="flex items-start justify-between p-2 border-b border-solid">
                   <h3 className="text-3xl font-semibold">
                     Tags
                   </h3>
-                  <button
-                    className="p-1 ml-auto border-0 text-white float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className="text-white h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      x
-                    </span>
-                  </button>
                 </div>
                 {/*body*/}
                 <div className="relative p-3 flex-auto">
@@ -70,7 +64,7 @@ export default function TagManager({tags, setTags} : TagManagerProps) {
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
-                    Save Changes
+                    Save
                   </button>
                 </div>
               </div>

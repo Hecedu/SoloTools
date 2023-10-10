@@ -8,14 +8,6 @@ export const metadata: Metadata = {
   title: 'Solo Tools',
   description: 'Virtual board game tools for solo play',
 }
-const kofi = `<script>
-kofiWidgetOverlay.draw('hecedu', {
-  'type': 'floating-chat',
-  'floating-chat.donateButton.text': 'Support me',
-  'floating-chat.donateButton.background-color': '#323842',
-  'floating-chat.donateButton.text-color': '#fff'
-});
-</script>`
 
 export default function RootLayout({
   children,
@@ -23,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className='h-full' lang="en">
+    <html className='h-full bg-black' lang="en">
     
       <body className={`${inter.className} relative h-full`}>{children}</body>
       

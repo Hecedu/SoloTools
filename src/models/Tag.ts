@@ -1,73 +1,73 @@
 export type Tag = {
   name: string;
-  emoji: string;
+  image: string;
   amount: number;
 };
 
 export const terraformingMarsTags: Tag[] = [
   {
     name: "Science",
-    emoji: "🔬",
+    image: "/gameResources/terraformingMars/tags/science.png",
     amount: 0,
   },
   {
     name: "Building",
-    emoji: "🏗️",
+    image: "/gameResources/terraformingMars/tags/building.png",
     amount: 0,
   },
   {
     name: "Space",
-    emoji: "🌌",
+    image: "/gameResources/terraformingMars/tags/space.png",
     amount: 0,
   },
   {
     name: "Plant",
-    emoji: "🌿",
+    image: "/gameResources/terraformingMars/tags/plant.png",
     amount: 0,
   },
   {
     name: "Microbe",
-    emoji: "🦠",
+    image: "/gameResources/terraformingMars/tags/microbe.png",
     amount: 0,
   },
   {
     name: "Animal",
-    emoji: "🐄",
+    image: "/gameResources/terraformingMars/tags/animal.png",
     amount: 0,
   },
   {
     name: "Power",
-    emoji: "⚡",
+    image: "/gameResources/terraformingMars/tags/power.png",
     amount: 0,
   },
   {
     name: "Jovian",
-    emoji: "🪐",
+    image: "/gameResources/terraformingMars/tags/jovian.png",
     amount: 0,
   },
   {
     name: "Earth",
-    emoji: "🌎",
+    image: "/gameResources/terraformingMars/tags/earth.png",
     amount: 0,
   },
   {
     name: "City",
-    emoji: "🏢",
+    image: "/gameResources/terraformingMars/tags/city.png",
     amount: 0,
   },
   {
     name: "Event",
-    emoji: "⬇️",
+    image: "/gameResources/terraformingMars/tags/event.png",
     amount: 0,
   },
   {
     name: "Venus",
-    emoji: "🟠",
+    image: "/gameResources/terraformingMars/tags/venus.png",
     amount: 0,
   },
   {
     name: "Wildcard",
-    emoji: "🃏",
+    image: "/gameResources/terraformingMars/tags/wild.png",
     amount: 0,
   },
 ];
