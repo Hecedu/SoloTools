@@ -123,10 +123,10 @@ export default function Page() {
 
   return (
     <>
-      <div className="flex justify-center items-center min-h-full h-max select-none bg-[url('https://images.unsplash.com/photo-1582043568773-a7a2b57239f5?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] md:bg-[url('https://images.unsplash.com/photo-1582043568773-a7a2b57239f5?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover">
+      <div className="flex justify-center items-center min-h-full h-max select-none bg-[url('https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] md:bg-[url('https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover">
         <div className='container border border-2 rounded m-1 p-1 h-max bg-black/90'>
           <div className='flex justify-center items-center'>
-            <h1 className='text-xl'>Expeditions Automa Helper</h1>
+            <h1 className='text-2xl mb-1'>Expeditions Automa Helper</h1>
           </div>
           <hr></hr>
           <div className='flex justify-center'>
@@ -173,7 +173,11 @@ export default function Page() {
             <button className='btn btn-error m-1'
               onClick={() => handleReset()}>Reset</button>
           </div>
-          <div className="my-3 collapse bg-base-200">
+          <div className='flex items-center mx-1'>
+            <a className='flex-auto text-xs' href='/'>Solo Tools</a>
+            <p className='flex-auto text-end text-xs' ><a href='https://hectormagana.art/'>2023 B-Llage </a></p>
+          </div>
+          <div className="my-1 collapse bg-base-200">
             <input type="checkbox" />
             <div className="collapse-title text-xl font-medium">
               Peek shuffled deck (spoils game)

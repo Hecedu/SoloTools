@@ -9,9 +9,12 @@ export default function Home() {
         <p className="text-small text-center font-bold inline">v1.1.0</p>
       </div>
       <hr></hr>
-      <ul>
-        <li>
-          <a className='bg-gray-800 md:hover:bg-gray-700 active:bg-gray-700 text-white font-bold ms-1 py-2 px-3 rounded' href="/TerraformingMars">Terraforming Mars Resource Tracker</a>
+      <ul className="w-auto">
+        <li className="my-5">
+          <a className='bg-gray-800 md:hover:bg-gray-700 active:bg-gray-700 text-white font-bold py-2 px-3 rounded' href="/TerraformingMars">Terraforming Mars Resource Tracker 🧑‍🚀</a>
+        </li>
+        <li className="my-5">
+          <a className='bg-gray-800 md:hover:bg-gray-700 active:bg-gray-700 text-white font-bold py-2 px-3 rounded' href="/Expeditions">Expeditions Automa Helper 🏔️</a>
         </li>
       </ul>
       <hr></hr>
