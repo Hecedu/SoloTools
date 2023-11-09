@@ -41,7 +41,7 @@ export default function AutomaCardDisplay({ card }: AutomaCardDisplayProps) {
                         <h1 className="h-1/6"> Card ID: {card.id}</h1>
                     </div> :
                     <div className='w-96 p-2 m-1 border border-1 h-96 rounded bg-black'>
-                        <h1>Click "Next" to draw your first card</h1>
+                        <h1>Click &quot;Next&quot; to draw your first card</h1>
                     </div>
 
             }
