@@ -60,7 +60,7 @@ export default function Page() {
 
   return (
     <div className="flex justify-center items-center min-h-full h-max select-none bg-[url('https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] md:bg-[url('https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover">
-      <div className='container border border-2 rounded m-1 p-1 h-max bg-black/90'>
+      <div className='container border border-2 rounded m-1 p-1 h-max bg-black/90 text-white'>
         <div className='flex items-center mb-1'>
           <div className='flex-auto '>
             <button className='bg-red-600 md:hover:bg-red-700 active:bg-red-700 text-white font-bold py-2 px-3 rounded' onClick={() => { resetTracker() }}>Reset</button>
