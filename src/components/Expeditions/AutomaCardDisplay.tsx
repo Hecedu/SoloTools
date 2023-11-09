@@ -8,7 +8,7 @@ export default function AutomaCardDisplay({ card }: AutomaCardDisplayProps) {
         <>
             {
                 card ?
-                    <div className='w-96 h-96 p-2 m-1 border border-1 rounded bg-black'>
+                    <div className='h-64 p-2 m-1 border border-1 rounded bg-black'>
                         <div className="border border-1">
 
                         <h2 className="flex justify-center ">{card.advancesTrack ? "🟦➡️" : "-"}</h2>
@@ -40,7 +40,7 @@ export default function AutomaCardDisplay({ card }: AutomaCardDisplayProps) {
                         </div>
                         <h1 className="h-1/6"> Card ID: {card.id}</h1>
                     </div> :
-                    <div className='w-96 h-96 p-2 m-1 border border-1 rounded bg-black'>
+                    <div className='h-64 p-2 m-1 border border-1 rounded bg-black'>
                         <h1>Click &quot;Next&quot; to draw your first card</h1>
                     </div>
 

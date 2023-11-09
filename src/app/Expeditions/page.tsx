@@ -15,9 +15,7 @@ export default function Page() {
 
 
   useEffect(() => {
-    console.log(currentShuffledAutomaDeckIndex)
     if (currentShuffledAutomaDeckIndex != undefined) {
-      console.log("advancing track")
       handleAdvanceTrack()
     }
     if (gameState == ExpeditionsGameState.FINAL_TURN) {
@@ -42,9 +40,7 @@ export default function Page() {
   }
 
   const handleAdvanceTrack = () => {
-    console.log("advancing track:" + currentShuffledAutomaDeckIndex)
     if (currentShuffledAutomaDeckIndex != undefined) {
-      console.log(shuffledAutomaDeck[currentShuffledAutomaDeckIndex])
       if (shuffledAutomaDeck[currentShuffledAutomaDeckIndex] && gameState !== ExpeditionsGameState.END) {
         if (shuffledAutomaDeck[currentShuffledAutomaDeckIndex].advancesTrack) {
           setAutoma({ ...automa, trackPosition: automa.trackPosition + 1 })
@@ -104,7 +100,6 @@ export default function Page() {
   }
 
   const handleAutomaLevelChange = (e: any) => {
-    console.log(e.target.value)
     switch (e.target.value) {
       case '1':
         setSelectedAutomaLevel(JSON.parse(JSON.stringify(Maszynette)))
@@ -130,7 +125,7 @@ export default function Page() {
           </div>
           <hr></hr>
           <div className='flex justify-center'>
-            <select className="select select-dark select-lg w-full max-w-xs m-1" onChange={handleAutomaLevelChange}>
+            <select className="select bg-black border border-white text-white select-lg w-full max-w-xs m-1" onChange={handleAutomaLevelChange}>
               <option disabled selected>Automa Level</option>
               <option value={1}>Maszynette</option>
               <option value={2}>Maszyna</option>
@@ -146,14 +141,14 @@ export default function Page() {
               <h1 className='text-center text-xl'>{automa.currentGloryLevel}</h1>
             </div>
             <div>
-              <div className='flex flex-wrap border border-1 rounded w-auto p-1'>
+              <div className='flex flex-wrap border border-1 rounded w-auto mb-1 p-1'>
                 {
                   //draw a table that has a length of track lenght
 
                   [...Array(automa.trackLength)].map((e, i) =>
                     <div className="flex-col" key={i}>
-                      <p>{automa.trackPosition === i ? <span>🤖</span> : <span>&nbsp;&nbsp;</span>} </p>
-                      <p>{(automa.trackMilestones[i] && automa.trackMilestones[i].hasGlory) ? '⭐' : '🟦'}</p>
+                      <p className='text-sm'>{automa.trackPosition === i ? <span>🤖</span> : <span>&nbsp;&nbsp;</span>} </p>
+                      <p className='text-sm'>{(automa.trackMilestones[i] && automa.trackMilestones[i].hasGlory) ? '⭐' : '🟦'}</p>
                     </div>)
                 }
               </div>
@@ -177,24 +172,24 @@ export default function Page() {
             <a className='flex-auto text-xs' href='/'>Solo Tools</a>
             <p className='flex-auto text-end text-xs' ><a href='https://hectormagana.art/'>2023 B-Llage </a></p>
           </div>
-          <div className="my-1 collapse bg-base-200">
-            <input type="checkbox" />
-            <div className="collapse-title text-xl font-medium">
-              Peek shuffled deck (spoils game)
-            </div>
-            <div className="collapse-content p-0">
-              <div className='flex flex-wrap'>
-                {shuffledAutomaDeck.map((card, idx) => (
-                  <div key={idx}>
-                    <p>{idx === currentShuffledAutomaDeckIndex ? "📍" : "-"}</p>
-                    <AutomaCardDisplay card={card} key={idx} />
-                  </div>
-                ))}
-              </div>
+        </div>
+      </div>
+        <div className="my-1 collapse bg-base-200">
+          <input type="checkbox" />
+          <div className="collapse-title text-xl font-medium">
+            Peek shuffled deck (spoils game)
+          </div>
+          <div className="collapse-content p-0">
+            <div className='flex flex-wrap'>
+              {shuffledAutomaDeck.map((card, idx) => (
+                <div key={idx}>
+                  <p>{idx === currentShuffledAutomaDeckIndex ? "📍" : "-"}</p>
+                  <AutomaCardDisplay card={card} key={idx} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
     </>
   )
 }
