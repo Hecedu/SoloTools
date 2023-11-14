@@ -1,6 +1,6 @@
 'use client'
 import AutomaCardDisplay from '@/components/Expeditions/AutomaCardDisplay'
-import { Automaszyna, ExpeditionsAutoma, Maszyna, Maszynette } from '@/models/Expeditions/ExpeditionsAutoma'
+import { Automaszyna, ExpeditionsAutoma, Maszyna, Maszynette, randomizeAutoma } from '@/models/Expeditions/ExpeditionsAutoma'
 import { ExpeditionsAutomaCard, expeditionsAutomaDeck } from '@/models/Expeditions/ExpeditionsAutomaCard'
 import { ExpeditionsGameState } from '@/models/Expeditions/ExpeditionsGame'
 import React, { useEffect } from 'react'
@@ -89,10 +89,15 @@ export default function Page() {
   }
 
   useEffect(() => {
-    handleReset()
+    if (selectedAutomaLevel.automaName !== "Randoma") {
+      handleReset()
+    }
   }, [selectedAutomaLevel])
 
   const handleReset = () => {
+    if (selectedAutomaLevel.automaName == "Randoma") {
+      setSelectedAutomaLevel(JSON.parse(JSON.stringify(randomizeAutoma())))
+    }
     setAutoma(JSON.parse(JSON.stringify(selectedAutomaLevel)))
     setGameState(ExpeditionsGameState.MAIN)
     setCurrentShuffledAutomaDeckIndex(undefined)
@@ -109,6 +114,9 @@ export default function Page() {
         break;
       case '3':
         setSelectedAutomaLevel(JSON.parse(JSON.stringify(Automaszyna)))
+        break;
+      case '100':
+        setSelectedAutomaLevel(JSON.parse(JSON.stringify(randomizeAutoma())))
         break;
       default:
         break;
@@ -128,6 +136,7 @@ export default function Page() {
                 <option value={1}>Maszynette</option>
                 <option value={2}>Maszyna</option>
                 <option value={3}>Automaszyna</option>
+                <option value={100}>Randoma</option>
               </select>
             </div>
             <hr></hr>
@@ -146,7 +155,7 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div className='flex items-center justify-start me-2'>
+          <div className='flex items-center justify-center mt-2'>
             <div className='flex items-center'>
               <h1 className='text-center text-2xl'>⭐{automa.currentGloryLevel}</h1>
             </div>
@@ -160,7 +169,7 @@ export default function Page() {
             <button disabled={gameState == ExpeditionsGameState.END} className='btn text-black btn-wide btn-accent m-1'
               onClick={() => handleDrawFromDeck()}>{gameState == ExpeditionsGameState.END ? "Game Over" : "Next"}</button>
             <button className='btn btn-error text-black  m-1'
-              onClick={() => handleReset()}>Reset</button>
+              onClick={() => handleReset()}>{selectedAutomaLevel.automaName == "Randoma" ? "Reroll": "Reset"}</button>
           </div>
           <div className='flex items-center mx-1'>
             <a className='flex-auto text-xs' href='/'>Solo Tools</a>
