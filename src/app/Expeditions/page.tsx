@@ -117,8 +117,8 @@ export default function Page() {
         break;
       case '100':
         var randomizedAutoma = JSON.parse(JSON.stringify(randomizeAutoma()))
-        setSelectedAutomaLevel(randomizedAutoma)
-        setAutoma(randomizedAutoma)
+        setSelectedAutomaLevel({...randomizedAutoma})
+        setAutoma({...randomizedAutoma})
         break;
       default:
         break;
