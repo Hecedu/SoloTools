@@ -19,7 +19,7 @@ type MechAction = {
 
 export class mechAction {
   static readonly COLLECT_MAP  = new mechAction("COLLECT_DISCOVERY_TOKEN", "Collect a discovery token.","🗺️");
-  static readonly VANQUISH_CORRUPTION = new mechAction('VANQUISH_CORRUPTION', 'Vanquish a corruption token of 🔵 size.', "🔵");
+  static readonly VANQUISH_CORRUPTION = new mechAction('VANQUISH_CORRUPTION', 'Vanquish 🔵 corruption tokens.', "🔵");
   static readonly VANQUISH_LAIR  = new mechAction('VANQUISH_LAIR', 'Vanquish the 20 corruption lair.', "🧿");
 
   // private to disallow creating other instances of this type
