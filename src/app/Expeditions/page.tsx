@@ -96,9 +96,13 @@ export default function Page() {
 
   const handleReset = () => {
     if (selectedAutomaLevel.automaName == "Randoma") {
-      setSelectedAutomaLevel(JSON.parse(JSON.stringify(randomizeAutoma())))
+      var randomizedAutoma = JSON.parse(JSON.stringify(randomizeAutoma()))
+      setSelectedAutomaLevel({...randomizedAutoma})
+      setAutoma(JSON.parse({...randomizedAutoma}))
     }
-    setAutoma(JSON.parse(JSON.stringify(selectedAutomaLevel)))
+    else {
+      setAutoma(JSON.parse(JSON.stringify(selectedAutomaLevel)))
+    }
     setGameState(ExpeditionsGameState.MAIN)
     setCurrentShuffledAutomaDeckIndex(undefined)
     shuffle()
