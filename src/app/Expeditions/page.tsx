@@ -97,8 +97,8 @@ export default function Page() {
   const handleReset = () => {
     if (selectedAutomaLevel.automaName == "Randoma") {
       var randomizedAutoma = JSON.parse(JSON.stringify(randomizeAutoma()))
-      setSelectedAutomaLevel({...randomizedAutoma})
-      setAutoma(JSON.parse({...randomizedAutoma}))
+      setSelectedAutomaLevel({ ...randomizedAutoma })
+      setAutoma(randomizedAutoma)
     }
     else {
       setAutoma(JSON.parse(JSON.stringify(selectedAutomaLevel)))
@@ -121,8 +121,8 @@ export default function Page() {
         break;
       case '100':
         var randomizedAutoma = JSON.parse(JSON.stringify(randomizeAutoma()))
-        setSelectedAutomaLevel({...randomizedAutoma})
-        setAutoma({...randomizedAutoma})
+        setSelectedAutomaLevel({ ...randomizedAutoma })
+        setAutoma({ ...randomizedAutoma })
         break;
       default:
         break;
@@ -166,16 +166,17 @@ export default function Page() {
               <h1 className='text-center text-2xl'>⭐{automa.currentGloryLevel}</h1>
             </div>
           </div>
+          <p className='text-center text-xs'>Actions with unmet requirements are greyed out.</p>
           <h1 className='text-center text-xl'>Current Card</h1>
           <div className='flex justify-center'>
 
-            <AutomaCardDisplay card={currentShuffledAutomaDeckIndex != undefined ? shuffledAutomaDeck[currentShuffledAutomaDeckIndex] : undefined} />
+            <AutomaCardDisplay card={currentShuffledAutomaDeckIndex != undefined ? shuffledAutomaDeck[currentShuffledAutomaDeckIndex] : undefined} automa={automa} />
           </div>
           <div className='flex justify-center my-3'>
             <button disabled={gameState == ExpeditionsGameState.END} className='btn text-black btn-wide btn-accent m-1'
               onClick={() => handleDrawFromDeck()}>{gameState == ExpeditionsGameState.END ? "Game Over" : "Next"}</button>
             <button className='btn btn-error text-black  m-1'
-              onClick={() => handleReset()}>{selectedAutomaLevel.automaName == "Randoma" ? "Reroll": "Reset"}</button>
+              onClick={() => handleReset()}>{selectedAutomaLevel.automaName == "Randoma" ? "Reroll" : "Reset"}</button>
           </div>
           <div className='flex items-center mx-1'>
             <a className='flex-auto text-xs' href='/'>Solo Tools</a>
@@ -183,24 +184,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-      {/*
-      <div className="my-1 collapse bg-base-200">
-        <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">
-          Peek shuffled deck (spoils game)
-        </div>
-        <div className="collapse-content p-0">
-          <div className='flex flex-wrap'>
-            {shuffledAutomaDeck.map((card, idx) => (
-              <div key={idx}>
-                <p>{idx === currentShuffledAutomaDeckIndex ? "📍" : "-"}</p>
-                <AutomaCardDisplay card={card} key={idx} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-              */}
     </>
   )
 }

@@ -1,14 +1,16 @@
+import { ExpeditionsAutoma } from "@/models/Expeditions/ExpeditionsAutoma"
 import { ExpeditionsAutomaCard } from "@/models/Expeditions/ExpeditionsAutomaCard"
 
 type AutomaCardDisplayProps = {
     card?: ExpeditionsAutomaCard
+    automa?: ExpeditionsAutoma
 }
-export default function AutomaCardDisplay({ card }: AutomaCardDisplayProps) {
+export default function AutomaCardDisplay({ card, automa }: AutomaCardDisplayProps) {
     return (
         <>
             {
-                card ?
-                    <div className='flex flex-col h-80 w-64 p-2 m-1 border border-1 rounded bg-zinc-900'>
+                card && automa ?
+                    <div className='flex flex-col h-80 w-64 p-1 m-1 border border-1 rounded bg-zinc-900'>
                         <div className="flex flex-col justify-center flex-auto border border-1">
 
                             <h2 className="flex justify-center">{card.advancesTrack ? "🟦➡️" : "-"}</h2>
@@ -16,7 +18,7 @@ export default function AutomaCardDisplay({ card }: AutomaCardDisplayProps) {
                         </div>
                         <div className="flex-auto">
                             <div className="grid grid-cols-3 divide-x h-auto text-xl">
-                                <div>
+                                <div className="pe-1">
                                     <p>
                                         {card.northMechRoutine.performsSwipe ? "🧹" : "-"}
                                     </p>
@@ -28,10 +30,15 @@ export default function AutomaCardDisplay({ card }: AutomaCardDisplayProps) {
 
                                     {
                                         card.northMechRoutine.action ?
-                                            <>
+                                        <div className="m-1" style={{opacity:
+                                            `${
+                                                automa.currentGloryLevel >= card.northMechRoutine.action?.gloryRequirement ?
+                                                 "100%" : "20%"
+                                            }`
+                                        }}>
                                                 <div>⭐{card.northMechRoutine.action?.gloryRequirement} : {card.northMechRoutine.action?.action.icon}{card.northMechRoutine.action?.amount}</div>
                                                 <p className="text-xs italic">{card.northMechRoutine.action?.action.description}</p>
-                                            </>
+                                            </div>
                                             :
                                             <p>-</p>
                                     }
@@ -45,7 +52,7 @@ export default function AutomaCardDisplay({ card }: AutomaCardDisplayProps) {
 
                             <hr className='m-1'></hr>
                             <div className="grid grid-cols-3 divide-x h-auto text-xl">
-                            <div>
+                                <div className="pe-1">
                                     <p>
                                         {card.centralMechRoutine.performsSwipe ? "🧹" : "-"}
                                     </p>
@@ -57,10 +64,16 @@ export default function AutomaCardDisplay({ card }: AutomaCardDisplayProps) {
 
                                     {
                                         card.centralMechRoutine.action ?
-                                            <>
+                                            <div className="m-1" style={{opacity:
+                                                `${
+                                                    automa.currentGloryLevel >= card.centralMechRoutine.action?.gloryRequirement ?
+                                                     "100%" : "30%"
+                                                }`
+                                            }}>
+                                                
                                                 <div>⭐{card.centralMechRoutine.action?.gloryRequirement} : {card.centralMechRoutine.action?.action.icon}{card.centralMechRoutine.action?.amount}</div>
                                                 <p className="text-xs italic">{card.centralMechRoutine.action?.action.description}</p>
-                                            </>
+                                            </div>
                                             : <p>-</p>
                                     }
                                     <hr></hr>
