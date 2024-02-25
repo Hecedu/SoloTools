@@ -132,7 +132,7 @@ export default function Page() {
 
   return (
     <>
-      <div className="flex text-white justify-center items-center min-h-full h-max select-none bg-[url('https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] md:bg-[url('https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover">
+      <div className="flex text-white justify-center items-center min-h-full h-max select-none bg-[url('https://images.pexels.com/photos/1933316/pexels-photo-1933316.jpeg')] md:bg-[url('https://images.pexels.com/photos/1933316/pexels-photo-1933316.jpeg')] bg-cover">
         <div className='container border border-2 rounded m-1 p-1 h-max bg-black/90'>
           <div className='flex justify-center items-center p-1'>
             <h1 className='flex-auto md:text-2xl mb-1'>Expeditions Solo Tools</h1>

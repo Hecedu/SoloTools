@@ -11,10 +11,20 @@ export default function Home() {
       <hr></hr>
       <ul className="w-auto">
         <li className="my-5">
-          <a className='bg-gray-800 md:hover:bg-gray-700 active:bg-gray-700 text-white font-bold py-2 px-3 rounded' href="/TerraformingMars">Terraforming Mars Resource Tracker 🧑‍🚀</a>
+          <a href="/TerraformingMars">
+            <div className="bg-gray-800 md:hover:bg-gray-700 active:bg-gray-700 text-white font-bold py-2 px-3 rounded flex flex-col gap-2">
+              <p className="text-center">Terraforming Mars Resource Tracker </p>
+              <img className="object-contain h-44" src='https://cf.geekdo-images.com/wg9oOLcsKvDesSUdZQ4rxw__imagepage/img/FS1RE8Ue6nk1pNbPI3l-OSapQGc=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3536616.jpg' />
+            </div>
+          </a>
         </li>
         <li className="my-5">
-          <a className='bg-gray-800 md:hover:bg-gray-700 active:bg-gray-700 text-white font-bold py-2 px-3 rounded' href="/Expeditions">Expeditions Automa Helper 🏔️</a>
+          <a href="/Expeditions">
+            <div className="bg-gray-800 md:hover:bg-gray-700 active:bg-gray-700 text-white font-bold py-2 px-3 rounded flex flex-col gap-3">
+              <p className="text-center">Expeditions Automa Helper</p>
+              <img className="object-contain h-44" src='https://cf.geekdo-images.com/9eBww9iAi472T2goijVqwQ__imagepage/img/WQ035H1FwIY7rGrQxPsvkUK0Gdk=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7320023.jpg' />
+            </div>
+          </a>
         </li>
       </ul>
       <hr></hr>
