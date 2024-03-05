@@ -180,7 +180,7 @@ export default function Page() {
           </div>
           <div className='flex items-center mx-1'>
             <a className='flex-auto text-xs' href='/'>Solo Tools</a>
-            <p className='flex-auto text-end text-xs' ><a href='https://hectormagana.art/'>2023 B-Llage </a></p>
+            <p className='flex-auto text-end text-xs' ><a href='https://hectormagana.art/'>2023 B-Llage </a> |<a href="https://stonemaiergames.com/games/expeditions/"> Expeditions</a> by <a href="https://stonemaiergames.com/">Stonemaier Games</a></p>
           </div>
         </div>
       </div>
