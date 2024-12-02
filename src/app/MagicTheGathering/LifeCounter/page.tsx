@@ -20,14 +20,14 @@ export default function Page() {
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-2 border border-2 bg-black rounded-lg text-sm select-none' onClick={() => {
                 const result = document.getElementById('my_modal_2') as HTMLDialogElement
                 result ? result.showModal() : undefined
-                }}>⚙️</div>
+            }}>⚙️</div>
             <a className='absolute border border-2 bg-black rounded-sm p-1 top-1/2 transform -translate-y-1/2 text-xs select-none' href="/">Solo Tools</a>
             <a className='absolute border border-2 bg-black rounded-sm p-1 top-1/2 right-0 transform -translate-y-1/2 text-xs select-none' href="https://hectormagana.art">B-Llage © 2024</a>
             <div className='grid grid-cols-2 h-full vw-100'>
-                <LifeCounter life={player1Health} setLife={setPlayer1Health} color='pink' />
-                <LifeCounter life={player2Health} setLife={setPlayer2Health} color='amber' />
-                <LifeCounter life={player3Health} setLife={setPlayer3Health} color='emerald' />
-                <LifeCounter life={player4Health} setLife={setPlayer4Health} color='blue' />
+                <LifeCounter life={player1Health} setLife={setPlayer1Health} color='pink' flippedControls={true} />
+                <LifeCounter life={player2Health} setLife={setPlayer2Health} color='amber' flippedControls={true} />
+                <LifeCounter life={player3Health} setLife={setPlayer3Health} color='emerald' flippedControls={false} />
+                <LifeCounter life={player4Health} setLife={setPlayer4Health} color='blue' flippedControls={false} />
             </div>
         </>
     )
