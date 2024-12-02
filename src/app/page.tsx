@@ -6,10 +6,18 @@ export default function Home() {
     <main className="flex min-h-full flex-col items-center justify-between py-24 bg-black">
       <div className="flex flex-col">
         <h1 className="text-5xl font-bold">Solo Tools</h1>
-        <p className="text-small text-center font-bold inline">v1.1.0</p>
+        <p className="text-small text-center font-bold inline">v1.2.0</p>
       </div>
       <hr></hr>
       <ul className="w-auto">
+      <li className="my-5">
+          <a href="/MagicTheGathering/LifeCounter">
+            <div className="bg-gray-800 md:hover:bg-gray-700 active:bg-gray-700 text-white font-bold py-2 px-3 rounded flex flex-col gap-2">
+              <p className="text-center">Magic the Gathering / Life Counter </p>
+              <img className="object-contain h-44" src='/gameResources/MTG/Mischievous-Mystic.jpg' />
+            </div>
+          </a>
+        </li>
         <li className="my-5">
           <a href="/TerraformingMars">
             <div className="bg-gray-800 md:hover:bg-gray-700 active:bg-gray-700 text-white font-bold py-2 px-3 rounded flex flex-col gap-2">
