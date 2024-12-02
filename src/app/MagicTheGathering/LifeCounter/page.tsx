@@ -17,7 +17,10 @@ export default function Page() {
                     <button>Close</button>
                 </form>
             </dialog>
-            <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-2 border border-2 bg-black rounded-lg text-sm select-none' onClick={() => document.getElementById('my_modal_2').showModal()}>⚙️</div>
+            <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-2 border border-2 bg-black rounded-lg text-sm select-none' onClick={() => {
+                const result = document.getElementById('my_modal_2') as HTMLDialogElement
+                result ? result.showModal() : undefined
+                }}>⚙️</div>
             <a className='absolute border border-2 bg-black rounded-sm p-1 top-1/2 transform -translate-y-1/2 text-xs select-none' href="/">Solo Tools</a>
             <a className='absolute border border-2 bg-black rounded-sm p-1 top-1/2 right-0 transform -translate-y-1/2 text-xs select-none' href="https://hectormagana.art">B-Llage © 2024</a>
             <div className='grid grid-cols-2 h-full vw-100'>
