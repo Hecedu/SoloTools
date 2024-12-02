@@ -1,7 +1,7 @@
 'use client'
 import LifeCounter from '@/components/Mtg/LifeCounter'
 import React, { useState } from 'react'
-export default function page() {
+export default function Page() {
     const [player1Health, setPlayer1Health] = useState(40)
     const [player2Health, setPlayer2Health] = useState(40)
     const [player3Health, setPlayer3Health] = useState(40)
