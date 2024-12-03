@@ -6,7 +6,7 @@ export default function Home() {
     <main className="flex min-h-full flex-col items-center justify-between py-24 bg-black">
       <div className="flex flex-col">
         <h1 className="text-5xl font-bold">Solo Tools</h1>
-        <p className="text-small text-center font-bold inline">v1.2.0</p>
+        <p className="text-small text-center font-bold inline">v1.2.1</p>
       </div>
       <hr></hr>
       <ul className="w-auto">

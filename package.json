@@ -1,6 +1,6 @@
 {
   "name": "solotools",
-  "version": "0.1.0",
+  "version": "1.2.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,6 +12,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-full-screen": "^1.1.1",
     "react-helmet": "^6.1.0",
     "react-kofi-button": "^0.7.1",
     "sass": "^1.68.0"

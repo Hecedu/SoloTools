@@ -150,9 +150,7 @@ function randomizeTrackMilestones(trackLength: number) {
 //function returns an automa object with the track milestones randomized it's inputs is the track length
 export function randomizeAutoma() {
   const trackLength = Math.floor(Math.random() * 11) + 21;
-  console.log(trackLength)
   const trackMilestones = randomizeTrackMilestones(trackLength);
-  console.log(trackMilestones)
   return new ExpeditionsAutoma(
     100,
     `Randoma`,

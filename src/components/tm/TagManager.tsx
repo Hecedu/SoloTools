@@ -35,11 +35,11 @@ export default function TagManager({ tags, setTags }: TagManagerProps) {
       {showModal ? (
         <>
           <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none w-full"
             onClick={() => setShowModal(false)}>
-            <div className="relative m-6 w-max h-auto">
+            <div className="relative m-6 w-full h-auto">
               {/*content*/}
-              <div className="border-2 rounded-lg shadow-lg relative flex flex-col w-full h-auto bg-stone-900 outline-none focus:outline-none" onClick={e => e.stopPropagation()}>
+              <div className="border-2 rounded-lg shadow-lg flex flex-col w-full h-auto bg-stone-900 outline-none focus:outline-none" onClick={e => e.stopPropagation()}>
                 {/*header*/}
                 <div className="flex items-start justify-between p-2 border-b border-solid">
                   <h3 className="text-3xl font-semibold">
